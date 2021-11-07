@@ -1,0 +1,17 @@
+{
+  "name": "node-api-kit",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Iannis de Zwart",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/node": "^16.11.6",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
