@@ -1,10 +1,10 @@
 # Node API Kit
 
-A simple, handy and intuitive NodeJS toolkit that lazy programmers will love.
+A simple, handy and intuitive NodeJS API toolkit that lazy programmers will love.
 Simply install the API Kit with:
 
 ```sh
-npm i node-api-kit
+npm i @iannisz/node-api-kit
 ```
 
 and save yourself a lot of time!
@@ -12,7 +12,7 @@ and save yourself a lot of time!
 ### Example
 
 ```ts
-import { createAPI, readJSONBody, createToken } from 'node-api-kit'
+import { createAPI, readJSONBody, createToken } from '@iannisz/node-api-kit'
 
 // Create an API that listens on port 3000.
 
