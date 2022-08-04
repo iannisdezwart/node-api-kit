@@ -32,7 +32,7 @@ export class API {
 			this.routes.set(path, [])
 		}
 
-		this.routes.get(path).push({
+		this.routes.get(path)!.push({
 			method,
 			options,
 			handler
@@ -177,8 +177,16 @@ export const createAPI = (port: number) => {
 	const api = new API()
 
 	const server = http.createServer((req, res) => {
-		const url = new URL(req.url, 'http://localhost')
+		const url = new URL(req.url || '', 'http://localhost')
 		const path = url.pathname
+
+		if (req.method == null)
+		{
+			res.statusCode = 400
+			res.end('Missing method')
+			return
+		}
+
 		const method = req.method.toUpperCase() as Method
 
 		if (!api.routes.has(path)) {
@@ -189,7 +197,7 @@ export const createAPI = (port: number) => {
 
 		const route = api.routes
 			.get(path)
-			.find(route => route.method == method)
+			?.find(route => route.method == method)
 
 		if (route == null) {
 			res.statusCode = 405
